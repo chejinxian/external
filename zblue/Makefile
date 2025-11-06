@@ -723,6 +723,10 @@ CSRCS += zblue/port/lib/net_buf/buf.c
 CSRCS += zblue/port/lib/os/assert.c
 CSRCS += zblue/port/sections/defines.c
 CSRCS += zblue/port/subsys/fs/fs.c
+# add porting shell
+CSRCS += zblue/port/subsys/bluetooth/host/classic/shell/bredr.c
+CSRCS += zblue/port/subsys/bluetooth/host/shell/bt.c
+CSRCS += zblue/port/subsys/bluetooth/host/shell/l2cap.c
 
 ifeq ($(CONFIG_BT_H4),y)
   CSRCS += zblue/port/drivers/bluetooth/hci/h4.c
@@ -745,7 +749,7 @@ CFLAGS += ${shell $(INCDIR) $(INCDIROPT) "$(CC)" zblue/subsys/bluetooth/services
 CFLAGS += ${shell $(INCDIR) $(INCDIROPT) "$(CC)" zblue/subsys/settings/include}
 CFLAGS += ${shell $(INCDIR) $(INCDIROPT) "$(CC)" $(APPDIR)/crypto/tinycrypt/tinycrypt/lib/include}
 
-ifeq ($(CONFIG_BT_SHELL),y)
+ifeq ($(CONFIG_BT_MC_SHELL),y)
   PROGNAME += zblue
   MAINSRC += zblue/port/subsys/shell/shell.c
 endif
