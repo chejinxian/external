@@ -876,9 +876,10 @@ if(CONFIG_BT)
     ${ZBLUE_DIR}/subsys/bluetooth
     ${ZBLUE_DIR}/subsys/bluetooth/host
     ${ZBLUE_DIR}/subsys/settings/include
+    ${ZBLUE_DIR}/subsys/settings/include/settings
   )
 
-  target_link_libraries(zblue PRIVATE zblue_headers)
+  target_link_libraries(zblue PUBLIC zblue_headers)
   target_include_directories(zblue BEFORE PRIVATE
     ${ZBLUE_DIR}/port/include
     ${ZBLUE_DIR}/port/kernel/include
