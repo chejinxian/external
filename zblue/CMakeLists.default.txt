@@ -877,6 +877,7 @@ if(CONFIG_BT)
     ${ZBLUE_DIR}/subsys/bluetooth/host
     ${ZBLUE_DIR}/subsys/settings/include
     ${ZBLUE_DIR}/subsys/settings/include/settings
+    ${NUTTX_APPS_DIR}/frameworks/connectivity/bluetooth/debug/probe
   )
 
   target_link_libraries(zblue PUBLIC zblue_headers)
